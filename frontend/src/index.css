@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #222831;
+    --color-secondary: #00ADB5;
+    --color-secondary2: #1ff4ff;
+    --color-grey: #BBBBBB;
+}
+
+@layer utilities{
+    @keyframes blink{
+        0%,
+        100%{
+            opacity: 1;
+        }
+        50%{
+            opacity: 0;
+        }
+    }
+
+    .animate-blink{
+        animation: blink 0.8s step-end infinite;
+    }
+
+
+    @keyframes loading{
+        0%{
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(250%);
+        }
+    }
+
+    .animate-loading-bar{
+        animation: loading 0.8s ease infinite;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px; /* Adjust according to your navbar height */
+  }
+
+  
+/* index.css or styles.css */
+
+.scroll-bar::-webkit-scrollbar {
+    height: 8px; /* Adjust height as needed */
+    width: 8px; /* Adjust width as needed */
+  }
+  
+  .scroll-bar::-webkit-scrollbar-track {
+    background: #222831; /* Track color */
+  }
+  
+  .scroll-bar::-webkit-scrollbar-thumb {
+    background: #222831; /* Thumb color */
+    border-radius: 4px; /* Optional: Rounded corners */
+  }
+  
+  .scroll-bar::-webkit-scrollbar-thumb:hover {
+    background: #222831; /* Thumb color on hover */
+  }
+  
+  /* Firefox scrollbar styling */
+  .scroll-bar {
+    scrollbar-width: thin;
+    scrollbar-color: #222831 #00ADB5; /* thumb track */
+  }
